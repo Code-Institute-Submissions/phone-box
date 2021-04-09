@@ -1,7 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
 
+/*---------- Navbar styles ---------*/
+
 .brand-logo {
     font-family: "Lato";
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.side-nav li>a {
+    color: white;
+}
+
+nav li>a:hover {
+    color: yellow;
+    transition: .3s ease-in;
+}
+
+.sidenav li>a:hover {
+    color: yellow;
+    transition: .3s ease-in;
 }
