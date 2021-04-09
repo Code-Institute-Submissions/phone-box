@@ -21,4 +21,5 @@ from charitybox import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('learnmore/', include('learnmore.urls')),
 ]
