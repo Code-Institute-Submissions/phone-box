@@ -18,6 +18,8 @@ from django.urls import include, path
 from django.templatetags.static import static
 from charitybox import settings
 
+""" URLs for entire app are defined and stored here by linking
+to individual urls.py files stored in each app folder."""
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
