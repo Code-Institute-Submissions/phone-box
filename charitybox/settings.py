@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'home',
     'learnmore',
     'donations',
-    'testimonials'
+    'testimonials',
+    'profiles',
+    'login',
+    'register',
 ]
 
 MIDDLEWARE = [

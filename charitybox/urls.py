@@ -26,4 +26,7 @@ urlpatterns = [
     path('learnmore/', include('learnmore.urls')),
     path('donations/', include('donations.urls')),
     path('testimonials/', include('testimonials.urls')),
+    path('profile/', include('profiles.urls')),
+    path('login/', include('login.urls')),
+    path('register/', include('register.urls')),
 ]
