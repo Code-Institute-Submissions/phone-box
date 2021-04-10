@@ -44,12 +44,13 @@
 
       <nav>
         <div class="nav-wrapper blue darken-1">
-          <a href="#!" class="brand-logo">Phone~Box</a>
+          <a href="{% url 'home' %}" class="brand-logo">Phone~Box</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
             <li><a href="">Login</a></li>
             <li><a href="">Register</a></li>
           </ul>
@@ -57,6 +58,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
             <li><a href="">Login</a></li>
             <li><a href="">Register</a></li>
           </ul>
