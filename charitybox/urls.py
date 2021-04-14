@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from django.templatetags.static import static
-from charitybox import settings
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 """ URLs for entire app are defined and stored here by linking
 to individual urls.py files stored in each app folder."""
@@ -27,6 +27,4 @@ urlpatterns = [
     path('donations/', include('donations.urls')),
     path('testimonials/', include('testimonials.urls')),
     path('profile/', include('profiles.urls')),
-    path('login/', include('login.urls')),
-    path('register/', include('register.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
