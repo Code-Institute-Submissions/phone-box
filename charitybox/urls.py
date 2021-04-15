@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 
 """ URLs for entire app are defined and stored here by linking
 to individual urls.py files stored in each app folder."""
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('learnmore/', include('learnmore.urls')),
     path('donations/', include('donations.urls')),
