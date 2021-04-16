@@ -1,8 +1,8 @@
 # Phone~Box
 
-One or two paragraphs providing an overview of your project.
+This project is a comical website for a fictional charity called "Phone~Box". Set up to take donations via the [Stripe](https://stripe.com/) API in order to provide "disenfranchised" children... with mobile phones. Because "How else would they let the world know how important my dog is during a pandemic" - Generic Instagram Teen User.
 
-Essentially, this part is your sales pitch.
+The Page would facillitate a user to sign up for an account login to a personal profile, and donate money via the donations page.
  
 ## UX
  
