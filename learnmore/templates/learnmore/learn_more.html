@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="col s8 white-text">
+
+<div class="col s8 white-text translate-center-about">
     <div class="card center center-align glass-card">
-        <h3 class="capitalize-text center-align center">About</h3>
+        <h3 class="center-align center white-text">About</h3>
         <p>
             Every teenager deserves a chance at a bright future, and what better way
             is there than through a luminous screen?
         </p>
-        <p>
+        <p></p>
             Since March 2020, we have been working with teenagers all over the country
             to ensure that they don't fall behind the arrogance and self-confidence of
             their peers.
         </p>
-        <div>
-            <p>
-                To see an overview detailing the success of our teenagers social media accounts
-                click the button.
-            </p>
-            <button>
-                Testimonials
-            </button>
     </div>
-    </div>
+    <div>
+        <p>
+            To see an overview detailing the success of our teenagers social media accounts
+            click the button.
+        </p>
+        <a href="{% url 'testimonials' %}" class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
+             Testimonials
+        </a>
+     </div>
 </div>
+
 
 
 

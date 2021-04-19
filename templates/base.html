@@ -79,10 +79,7 @@
     <div class="overlay-darken"></div>
 
     <!-- Defines the audio elements to be called later using scripts.js -->
-    <audio id="sounds">
-      <source src="{% static 'media/sounds/' %}" id="text-sound" type="audio/wav">
-    </audio>
-
+    <audio id="text-sound" src="{% static 'media/sounds/textsound.wav' %}" autoplay="false" ></audio>
 
     {% block content %}
     {% endblock %}
@@ -93,7 +90,17 @@
           $(".button-collapse").sideNav();
         })
       </script>
+      <script>
+        let audio = document.getElementById('text-sound');
+        audio.volume = 0.1;
+      </script>
     {% endblock %}
-
+      <footer class="white-text glass-card">
+        <div class="float-left footer-elements">
+          <h4>Contact</h4>
+          <p>Phone: 0118999 88199 9119725 3</p>
+          <p>Email: phone~box@phone~box.com</p>
+        </div>
+      </footer>
   </body>
 </html>

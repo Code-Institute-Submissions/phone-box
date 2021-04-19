@@ -31,9 +31,29 @@ body {
     color: black;
 }
 
-/*------------ Login/Register page styles --------*/
+/*------------ Footer styles --------*/
 
+footer {
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	position: fixed;
+	height: auto;
+	width: 100%;
+	-moz-box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.102);
+    -webkit-box-shadow: 0 -5px 6px rgba(0,0,0,0.102);
+    box-shadow: 0 -5px 6px rgba(0,0,0,0.102);
+}
 
+.footer-elements {
+	margin-left: 10px;
+}
+
+/*------------ Header styles --------*/
+
+header, nav, .nav-wrapper {
+	width: 100%;
+}
 
 /*----------- Reuseable styles -------------*/
 
@@ -63,5 +83,32 @@ body {
 
 .glass-card {
 	background-color: rgba(28, 167, 180, 0.061);
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(5px);
+}
+
+.translate-center {
+	transform: translate(10%, 50%);
+}
+
+.translate-center-about {
+	transform: translate(10%, 35%);
+}
+
+.card {
+	max-width: 80%;
+	box-shadow: 0 5px 5px 0 rgb(0 0 0 / 14%), 0 5px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+	border-radius: 7px;
+}
+
+.btn {
+	border-radius: 7px;
+}
+
+.btn:hover {
+    color: yellow;
+    transition: .3s ease-in;
+}
+
+a:hover {
+	text-decoration: none;
 }
