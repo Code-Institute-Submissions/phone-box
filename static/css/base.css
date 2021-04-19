@@ -60,3 +60,8 @@ body {
 .capitalize-text {
 	text-transform: uppercase;
 }
+
+.glass-card {
+	background-color: rgba(28, 167, 180, 0.061);
+	backdrop-filter: blur(4px);
+}
