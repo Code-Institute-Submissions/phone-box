@@ -81,6 +81,16 @@ header, nav, .nav-wrapper {
 	max-width: 200px;
 }
 
+/*----------- Donations Page styles------------*/
+
+.margin-bottom-extension {
+	margin-bottom: 20%;
+}
+
+.border-primary {
+	border-color: #1e88e5;
+}
+
 /*----------- Reuseable styles -------------*/
 
 .overlay {
@@ -137,4 +147,8 @@ header, nav, .nav-wrapper {
 
 a:hover {
 	text-decoration: none;
+}
+
+.yellow-text {
+	color: yellow;
 }
