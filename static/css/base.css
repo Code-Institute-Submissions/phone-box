@@ -91,6 +91,10 @@ header, nav, .nav-wrapper {
 	border-color: #1e88e5;
 }
 
+#donations-box-move .card:hover {
+	margin-top: 20px;
+}
+
 /*----------- Reuseable styles -------------*/
 
 .overlay {
