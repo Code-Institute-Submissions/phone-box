@@ -5,6 +5,8 @@ from django.dispatch import receiver
 
 # Create your models here.
 """
-Order
-Product
+class Order():
+
+class Product():
+    
 """
