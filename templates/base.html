@@ -50,7 +50,6 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
@@ -59,7 +58,6 @@
           </ul>
           <ul class="side-nav blue darken-1" id="mobile-demo">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
@@ -86,12 +84,13 @@
         })
       </script>
     {% endblock %}
-      <footer class="white-text glass-card">
-        <div class="float-left footer-elements">
-          <h4>Contact</h4>
-          <p>Phone: 0118999 88199 9119725 3</p>
-          <p>Email: phone~box@phone~box.com</p>
-        </div>
-      </footer>
+
+    <footer class="blue lighten-5">
+      <div class="center">
+        <h4>Contact</h4>
+        <p>Phone: 0118999 88199 9119725 3</p>
+        <p>Email: phone~box@phone~box.com</p>
+      </div>
+    </footer>
   </body>
 </html>

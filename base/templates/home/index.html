@@ -1,19 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
-    <div class="col s10 offset-s2 translate-center white-text">
-        <div class="card center glass-card">
-            <h2 class="capitalize-text white-text">"A teen with a phone can never feel alone..."</h2>
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 offset-s2 white-text">
+                    <div class="card center glass-card card-padding">
+                        <h2 class="capitalize-text white-text">"A teen with a phone can never feel alone..."</h2>
+                    </div>
+                    <div>
+                        <br>
+                        <a href="{% url 'donations' %}" 
+                        class="waves-effect waves-light btn blue darken-1">
+                            make a donation
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <br>
-            <a href="{% url 'donations' %}" 
-            class="waves-effect waves-light btn blue darken-1">
-                make a donation
-            </a>
-        </div>
-    </div>
-</div>
+    </section>
+    
+    <section class="partition-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 offset-s2 white-text">
+                        <div class="card center glass-card card-padding">
+                            <h3 class="white-text">About</h3>
+                            <hr>
+                            <p>
+                                Every teenager deserves a chance at a bright future, and what better way
+                                is there than through a luminous screen?
+                            </p>
+                            <p></p>
+                                Since March 2020, we have been working with teenagers all over the country
+                                to ensure that they don't fall behind the arrogance and self-confidence of
+                                their peers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 
 {% endblock %}

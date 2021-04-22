@@ -25,7 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
     path('', include('base.urls')),
-    path('learnmore/', include('learnmore.urls')),
     path('donations/', include('donations.urls')),
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),

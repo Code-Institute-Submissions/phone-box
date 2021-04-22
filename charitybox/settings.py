@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'base',
-    'learnmore',
     'donations',
     'profiles',
     'checkout',
