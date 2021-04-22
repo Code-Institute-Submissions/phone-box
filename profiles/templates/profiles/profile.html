@@ -4,28 +4,46 @@
 
 
 <div class="row">
-    <div class="col s12">
-        <div class="col s6 float-left">
-            <div class="container">
-                <div class="account-details glass-card center center-align">
-                    account details
-                </div>
+    <div class="col s12 white-text margin-bottom-extension">
+
+        <div class="row">
+            <div class="col s12 center">
+                <h2>Dashboard</h2>
             </div>
         </div>
-        <div class="col s6 float-left">
-            <div class="container account-controls">
-                <div class="profile-image glass-card center center-align">
-                    profile image
+
+        <div class="col s10 offset-s2">
+            <div class="card glass-card center">
+                <h4>Account Details</h4>
+                <hr>
+                <div>
+                    <p><strong>Username: </strong>username</p>
+                    <p><strong>Email: </strong>email</p>
                 </div>
-                <div class="donator-level glass-card center center-align">Donator level: 9999</div>
-                <div class="row center center-align">
-                    <div>
-                        <a href="#" class="btn">edit</a>
-                        <a href="#" class="btn">delete</a> 
+                <div>
+                    <p><strong>Address Line 1: </strong>street_address1</P>
+                    <p><strong>Addres Line 2: </strong>street_address2</p>
+                    <p><strong>Postcode: </strong>postcode</p>
+                </div>
+                <hr>
+                <h4>Donation History</h4>
+                <hr>
+                <div>
+                    <p><strong>package_name</strong></p>
+                    <p>amount_for_this_donation</p>
+                </div>
+                <div class="row">
+                    <hr>
+                    <div class="col s12">
+                        <a href="{% url 'donations' %}" 
+                        class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
+                        make a donation
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

@@ -8,3 +8,7 @@ from .forms import UserProfileForm
 def profile(request):
     """ a view to return the user dashboard """
     return render(request, 'profiles/profile.html')
+
+def donation_historry(request):
+    """ a view to return the user dashboard """
+    return render(request, 'profiles/donation_history.html')
