@@ -24,10 +24,9 @@ to individual urls.py files stored in each app folder."""
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
-    path('', include('home.urls')),
+    path('', include('base.urls')),
     path('learnmore/', include('learnmore.urls')),
     path('donations/', include('donations.urls')),
-    path('testimonials/', include('testimonials.urls')),
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -52,7 +52,6 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
-            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
             <li><a href="{% url 'account_signup' %}">Register</a></li>
@@ -62,7 +61,6 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'learn_more' %}">Learn more</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
-            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
             <li><a href="{% url 'account_signup' %}">Register</a></li>
@@ -77,10 +75,6 @@
 
     <!-- creates a full page overlay in order to darken the background image -->
     <div class="overlay-darken"></div>
-
-    <!-- Defines the audio elements to be called later using scripts.js -->
-    <audio id="text-sound" src="{% static 'media/sounds/textsound.wav' %}" 
-    autoplay="false" ></audio>
 
     {% block content %}
     {% endblock %}
