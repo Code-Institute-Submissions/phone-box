@@ -38,7 +38,7 @@ class Order(models.Model):
 
 class Product(models.Model):
     donation_name = models.CharField(max_length=200, null=True, blank=True)
-    donation_price = models.IntegerField(max_length=3, null=True, blank=True)
+    donation_price = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name

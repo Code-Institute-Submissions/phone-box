@@ -1,2 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+
+<h2 class="center white-text">Checkout</h2>
+
+<div class="row white-text">
+    <div class="col s6 offset-s2 left">
+        <div class="card center glass-card">
+           <h4>Billing Information</h4> 
+            <form action="#">
+                <h6>Address on card</h6>
+                <input type="text" placeholder="first_name">
+                <input type="text" placeholder="last_name">
+                <input type="text" placeholder="street_address1">
+                <input type="text" placeholder="street_address2">
+                <input type="text" placeholder="county">
+                <input type="text" placeholder="postcode">
+            </form>
+        </div>
+    </div>
+    <div class="col s6 right">
+        <div class="card center glass-card">
+            <form>
+                <h6>Card Details</h6>
+                <input type="text" placeholder="card_number">
+                <input type="text" placeholder="sort_code">
+                <input type="text" placeholder="security_code">
+                <br>
+                <div class="order-summary-field">
+                    <h6>Order Summary</h6>
+                    <p>Order Numer</p>
+                    <p>Total: 9999</p>
+                </div>
+                <div class="row">
+                    <div class="pay-now-section">
+                        <br>
+                        <a href="#" action=""
+                            class="waves-effect waves-light btn green" id="click-to-play-sound">
+                            pay now
+                        </a>
+                    </div>
+                </div>
+    </div>
+</div>
+
+{% endblock %}
