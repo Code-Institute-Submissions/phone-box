@@ -5,10 +5,13 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
+@login_required
 def profile(request):
     """ a view to return the user dashboard """
-    return render(request, 'profiles/profile.html')
+    profile_data: UserProfile = request.user.userprofile
+    return render(request, 'profiles/profile.html', {'profile': profile_data})
 
-def donation_historry(request):
-    """ a view to return the user dashboard """
+
+def donation_history(request):
+    """ a view to return donation history """
     return render(request, 'profiles/donation_history.html')

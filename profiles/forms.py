@@ -18,6 +18,9 @@ class UserProfileForm(forms.ModelForm):
             'default_last_name': 'Last Name',
             'default_username': 'Username',
             'default_email': 'Email',
+            'default_street_address1': 'Address line 1',
+            'default_street_address2': 'Address line 2',
+            'default_postcode': 'Postcode',
             'default_password1': 'Password',
             'default_password2': 'Confirm Password',
         }
