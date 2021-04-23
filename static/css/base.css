@@ -17,12 +17,6 @@ nav li>a:hover {
     transition: .3s ease-in;
 }
 
-.sidenav li>a:hover {
-    color: white;
-	background: linear-gradient(to right, rgb(255, 230, 0), transparent);
-    transition: .3s ease-in;
-}
-
 /*------------- Home page styles -------------*/
 
 body {
