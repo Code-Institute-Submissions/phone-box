@@ -52,17 +52,25 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
-            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% endif %}
             <li><a href="{% url 'account_signup' %}">Register</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% endif %}
           </ul>
           <ul class="side-nav blue darken-1" id="mobile-demo">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>
-            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% endif %}
             <li><a href="{% url 'account_signup' %}">Register</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>

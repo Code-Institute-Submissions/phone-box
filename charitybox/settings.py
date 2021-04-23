@@ -107,8 +107,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = 'profile'
 
 WSGI_APPLICATION = 'charitybox.wsgi.application'
 
