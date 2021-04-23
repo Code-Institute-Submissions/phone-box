@@ -59,14 +59,6 @@ header, nav, .nav-wrapper {
 	transform: translateY(20px);
 }
 
-.profile-image {
-	width: 200px;
-	height: 200px;
-	max-width: 200px;
-	max-height: 200px;
-	background: whitesmoke;
-}
-
 .donator-level {
 	height: auto;
 	margin: 0;
@@ -120,6 +112,10 @@ header, nav, .nav-wrapper {
 	backdrop-filter: blur(5px);
 }
 
+.translate-center-from-left {
+	transform: translateX(10%);
+}
+
 .translate-center {
 	transform: translateY(35%);
 }
@@ -163,6 +159,10 @@ a:hover {
 .section-padding {
 	padding-top: 10%;
 	padding-bottom: 5%;
+}
+
+.section-padding-login {
+	padding-top: 5%;
 }
 
 .section-padding-bottom {
