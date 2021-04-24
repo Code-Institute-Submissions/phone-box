@@ -133,6 +133,12 @@ moving. ----*/
 	padding-top: 5%;
 }
 
+/*---------- Verify email address styles ----------*/
+.center-verify-email {
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
 /*----------- Reuseable styles -------------*/
 
 /*---- Creates an overlay 100% height of the page, and 100% width of the page, with
