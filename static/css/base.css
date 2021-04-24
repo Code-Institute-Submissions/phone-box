@@ -120,6 +120,12 @@ moving. ----*/
 	transform: translateY(20px);
 }
 
+/*---------- Registration/SignUp page ----------*/
+
+.margin-bottom-extension-signup {
+	margin-bottom: 20px;
+}
+
 /*----------- login Styles -----------*/
 
 /*----- Some custom css for adding padding to the top of a section -----*/
