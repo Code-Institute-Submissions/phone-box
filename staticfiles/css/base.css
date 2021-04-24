@@ -1,0 +1,261 @@
+/*---- @import used to import "Lato" font from googlefonts for use later. ----*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+
+/*---------- Navbar styles ---------*/
+
+/*---- Adds some custom code to the materialize brand-logo class, defining a font
+used from googlefonts. ----*/
+.brand-logo {
+    font-family: "Lato";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*---- Changes all anchor tags in li items in the side-nav class to be white text ----*/
+.side-nav li>a {
+    color: white;
+}
+
+/*---- All anchor tag text in the nav element change yelloe when hovered over by the
+user. ----*/
+nav li>a:hover {
+    color: yellow;
+    transition: .3s ease-in;
+}
+
+/*------------- Home/base page styles -------------*/
+
+/*---- Custom body code block for defining a baclground banner image to
+cover the entire page, be behind all other elements, not-repeat, and be fixed in
+place so it doesn't scroll with the page, fallback colour is black ----*/
+body {
+    background: url('/static/media/banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: black;
+}
+
+/*---- Pushes the about card down by 35% of screen height, and 10% of screen width
+to the right (by creating a 10% margin on the left of the element. ----*/
+.translate-center-about {
+	margin: 0;
+	padding: 0;
+	margin-left: 10%;
+	transform: translateY(35%)
+}
+
+/*----- Custom css for a section element on the home/base page. Sets width to 100%
+screen width, gives it a grey-blue transparent background colour, so its clear seperation
+that this is a new section to the user, and adds some padding to the top and bottom
+of the section to add some breathing space for the inner content. -----*/
+.partition-section {
+	width: 100%;
+	height: auto;
+	background-color: rgba(28, 167, 180, 0.200);
+	padding-top: 5%;
+	padding-bottom: 4%;
+}
+
+/*------------ Footer styles --------*/
+
+/*---- Custom css for footer element. alllow footer to scroll with the rest of the
+page content, removes margin and padding, created 5px padding at top to give inner
+content some space and 10px padding at the bottom. width st 100%, box shadow added
+to the top of the element to make it more interesting and tie it in more with the
+overall aesthetic of the website (UXD). z-index set to display above every other
+element. ----*/
+footer {
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	position: relative;
+	height: auto;
+	width: 100%;
+	-moz-box-shadow: 0 -5px 6px rgba(0, 0, 0, 0.102);
+    -webkit-box-shadow: 0 -5px 6px rgba(0,0,0,0.102);
+    box-shadow: 0 -5px 6px rgba(0,0,0,0.102);
+	z-index: 9999;
+}
+
+/*------------ Header styles --------*/
+
+/*---- Sets width to display across 100% of the screen width for elements, header,
+nav, and nav-wrapper class. ----*/
+header, nav, .nav-wrapper {
+	width: 100%;
+}
+
+/*------------ Profile/User Dashboard styles --------*/
+
+/*---- class labelled account controls, moves the element down the page by 20px. Without,
+influencing or interacting with margin or padding on other elements. ----*/
+.account-controls {
+	transform: translateY(20px);
+}
+
+/*---- class labelled accout details, moves the element down the page by 20px. Without,
+influencing or interacting with margin or padding on other elements.----*/
+.account-details {
+	transform: translateY(20px);
+}
+
+/*----------- Donations Page styles------------*/
+
+/*---- Class for creating a margin on the bottom of an element to be 20% screen height. ----*/
+.margin-bottom-extension {
+	margin-bottom: 20%;
+}
+
+/*---- Overrides bootstrap border-color with a custom colour to match the materialize blue. ----*/
+.border-primary {
+	border-color: #1e88e5;
+}
+
+/*---- ID to move all cards 20px down the page when user hovers over each card element,
+translate allows nearby elements to not be influenced or intereacted with by the element
+moving. ----*/
+#donations-box-move .card:hover {
+	transform: translateY(20px);
+}
+
+/*---------- Registration/SignUp page ----------*/
+
+.margin-bottom-extension-signup {
+	margin-bottom: 20px;
+}
+
+/*----------- login Styles -----------*/
+
+/*----- Some custom css for adding padding to the top of a section -----*/
+.section-padding-login {
+	padding-top: 5%;
+}
+
+/*---------- Verify email address styles ----------*/
+.center-verify-email {
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+/*----------- Reuseable styles -------------*/
+
+/*---- Creates an overlay 100% height of the page, and 100% width of the page, with
+0 top or left margin, is fixed, so it doesnt scroll with the page, and is white.
+(may not be used). z-index of -1 so it appear behind most other elements but covers
+the background image otherwise displayed on other screens. ----*/
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/*---- Creates an overlay that is 100% the height and 100% the width of the screen, with
+0 top or left margin, fixed so it doesnt scroll with the page content. z-index is behind
+most other elements but will cover the background image. this overlay creates a transparent
+grey darken effect. ----*/
+.overlay-darken {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.342);
+	z-index: -1;
+}
+
+/*---- Will turn all text with this class label upper-case. ----*/
+.capitalize-text {
+	text-transform: uppercase;
+}
+
+/*---- Custom CSS class created for cards, that creates a grey and transparent
+bacground colour, then applies a blue to that colour fill, of 5px, hoping to achieve
+a sleek glassy looking effect. ----*/
+.glass-card {
+	background-color: rgba(28, 167, 180, 0.061);
+	backdrop-filter: blur(5px);
+}
+
+/* ---- Reuseable css class to push an element right by 10% of the screen width. ----*/
+.translate-center-from-left {
+	transform: translateX(13%);
+}
+
+/* ---- Resuseable css class to push an elemenet down the page by 35% of the
+screen size. ----*/
+.translate-center {
+	transform: translateY(35%);
+}
+
+/*---- Some custom css for the bootstrap card class, ensures its always 80% width max
+on any screen size, and adds a box shadow effect to all cards, to hel tie in with
+the websites aesthetic (UXD), and sets a boreder radius to slightly soften and curve
+the edges of the card elements. ----*/
+.card {
+	max-width: 80%;
+	box-shadow: 0 5px 5px 0 rgb(0 0 0 / 14%), 0 5px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+	border-radius: 7px;
+	margin: 0;
+}
+
+/*---- Curves the corners of the button elements with the .btn class ----*/
+.btn {
+	border-radius: 7px;
+}
+
+/*---- Adds a hover effect to .btn class elements. Turns the text from white to yellow
+when the user hovers the button. ----*/
+.btn:hover {
+    color: yellow;
+    transition: .3s ease-in;
+}
+
+/*---- Removes the underline that appears in the materialize library when a user
+hovers over an anchor element. ----*/
+a:hover {
+	text-decoration: none;
+}
+
+/*---- Reuseable css code block for defining yellow text. ----*/
+.yellow-text {
+	color: yellow;
+}
+
+/*---- Custom class to set an element to be always 80% the width of the screen. ----*/
+.max-width-eighty-percent {
+	width: 80%;
+	max-width: 80%;
+}
+
+/*---- Custom css for adding some padding to the top and bottom of a section. ----*/
+.section-padding {
+	padding-top: 10%;
+	padding-bottom: 5%;
+}
+
+/*----- Custom css fir adding pading to the bottom of a section. -----*/
+.section-padding-bottom {
+	padding-bottom: 5%;
+}
+
+/*----- Allows an ordinary div to span the full width of the screen, and creates a gap
+of 5% the screen height. -----*/
+.spacer {
+	width: 100%;
+	height: 5%;
+	margin: 0;
+	padding: 0;
+}
+
+/*----- Custom padding class for adding 5px worth of padding to cards, creates breathing
+room for the inner content. -----*/
+.card-padding {
+	padding-left: 5px;
+	padding-right: 5px;
+}
