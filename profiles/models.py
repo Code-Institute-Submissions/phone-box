@@ -3,11 +3,8 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+""" A user profile model for maintaining default delivery information and order history """
 class UserProfile(models.Model):
-    """
-    A user profile model for maintaining default
-    delivery information and order history
-    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_first_name = models.CharField(max_length=200, null=True, blank=True)
     default_last_name = models.CharField(max_length=200, null=True, blank=True)
@@ -22,6 +19,8 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+""" sets a reciever to be required, when user information is recieved, create an
+instance and save the profile/user information. """
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """

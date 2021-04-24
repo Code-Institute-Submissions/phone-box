@@ -1,7 +1,16 @@
+<!-- index.html is the main Landing page for the website. -->
+
+<!-- 'extends' calls the base.html file and uses the code from there, then using the
+pre-defined django templating tags, allows the developer to add custom code without
+having the re-write everything contained in 'base.html' -->
 {% extends 'base.html' %}
+
+<!-- Block content called here to write to main code content for the landing page. -->
 {% block content %}
 
+    <!-- Organizes code into individual sections. -->
     <section class="section-padding">
+        <!-- Boostrap css 'conatiner' centers with padding -->
         <div class="container">
             <div class="row">
                 <div class="col s12 offset-s2 white-text">
@@ -20,6 +29,8 @@
         </div>
     </section>
     
+    <!-- Seconds section which displays as a transparent div across 100% width of the 
+    screen in order to make a clear seperation of content visibile to the user. -->
     <section class="partition-section">
             <div class="container">
                 <div class="row">
@@ -42,4 +53,5 @@
             </div>
     </section>
 
+<!-- Defines end of 'content' code block. -->
 {% endblock %}

@@ -1,5 +1,11 @@
+<!-- This is the base file for allauth templates, which with the code block below
+I have told it to use the code from the base.html file at project level in order to
+take full advantage of the styles an javascript already available in the rest of the
+project. -->
 {% extends "base.html" %}
 
+<!-- In order to properly allow styling, inner_content must be inside content django
+templating blocks. -->
 {% block content %}
     {% block inner_content %}
     {% endblock %}

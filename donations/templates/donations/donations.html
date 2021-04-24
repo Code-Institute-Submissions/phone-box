@@ -1,15 +1,23 @@
+<!-- donations.html is the page for displaying pre-defined payment packages, as
+pre-defined in models.py. -->
+
+<!-- 'extends' calls the base.html file and uses the code from there, then using the
+pre-defined django templating tags, allows the developer to add custom code without
+having the re-write everything contained in 'base.html' -->
 {% extends 'base.html' %}
 
+<!-- Block content called here to write to main code content for the donations page. -->
 {% block content %}
 
+<!-- donation-box-move using simple css to create a mouseover hover effect on each of
+the payment package boxes, defined below using .card -->
 <div id="donations-box-move" class="container py-3">
- 
-  
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-4 fw-normal white-text">Make a Donation</h1>
       <p class="fs-5 white-text">To make it easier for you to make a selection we've put together three template donation packages.</p>
     </div>
   
+    <!-- Selectable payment cards organized into a scetion tag. -->
     <section>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
@@ -25,6 +33,8 @@
                 <li>You just want to help?</li>
                 <li>Click the button?</li>
               </ul>
+
+              <!-- Button defined herer to re-direct to the checkout page. -->
               <a href="{% url 'checkout' %}" 
                 class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
                 donate
@@ -45,6 +55,8 @@
                 <li>Got something to prove?</li>
                 <li>Click me!</li>
               </ul>
+
+              <!-- Button defined herer to re-direct to the checkout page. -->
               <a href="{% url 'checkout' %}" 
                 class="waves-effect waves-light btn blue darken-1">
                 donate
@@ -65,6 +77,8 @@
                 <li>From the poor families</li>
                 <li>Easy Bragging rights</li>
               </ul>
+
+              <!-- Button defined herer to re-direct to the checkout page. -->
               <a href="{% url 'checkout' %}" 
                 class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
                 donate
@@ -76,4 +90,5 @@
     </section>
   </div>
 
+<!-- End of 'content' block. -->
 {% endblock %}

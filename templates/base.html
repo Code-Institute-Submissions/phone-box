@@ -1,9 +1,20 @@
+<!-- This django templating line tells the document to load the static directory
+as defined in the project level settings.py file, static included base.css,
+scripts, and any media used throughout the project. -->
 {% load static %}
 
+<!-- Tells the brwoser client, this document type is HTML. -->
 <!doctype html>
+
+<!-- Sets the project language for browser clients. -->
 <html lang="en">
+
+  <!-- The head element containing code blocks that tells the document to load
+  certain resources like CDNs or style FIRST in the load order. -->
   <head>
 
+    <!-- Block Meta defined just in case the developer wants to add anything to this
+    particular code block via a different template using 'super' method. -->
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -13,6 +24,8 @@
     {% block extra_meta %}
     {% endblock %}
 
+    <!-- All resources for corse CSS/Styles, including: Bootstrap4, FontAwesome5,
+    Materialize 0.100.2 and CUSTOM base.css the developer has written for the project-->
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
@@ -21,9 +34,14 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
+    <!-- Extra CSS block defined, just in case the dev wants to add any additional
+    .css files via other templates for specific pages, and only specific pages. -->
     {% block extra_css %}
     {% endblock %}
 
+    <!-- This code block defines core JavaScript scripts to be used when 'static' is
+    from the top of the base.html, includes: jQuery, Materialize 0.100.2, FntAweseom,
+    and CUSTOM scripts.js written by the developer. -->
     {% block corejs %}
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -34,17 +52,28 @@
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
+    <!-- extra JavaScript block defined just in case the developer wants to add any
+    additional scripts to specific template pages via the 'super' method. -->
     {% block extra_js %}
     {% endblock %}
 
+    <!-- Project Title displayed in the browser clients tabs for easy navigation. -->
     <title>Phone~Box {% block extra_title %}{% endblock %}</title>
   </head>
+
+  <!-- Defines 'body', where all the main content for the page is written. -->
   <body>
-
+    
+    <!-- Header defines elements to be load before anything else, and are typically
+    by design going to appear at the top of the page. -->
     {% block page_header %}
+    <!-- Navbar defined here, using some template HTML taken from Materlialize and
+    altered for the needs of the developer. -->
     <header>
-
       <nav>
+        <!-- Default Navbar visible on all screen sizes. However, certain elements
+        such as all list item will be hidden behind a collapsible menu icon, the
+        websites main logo will be displayed as centered. in mobile views -->
         <div class="nav-wrapper blue darken-1">
           <a href="{% url 'home' %}" class="brand-logo">Phone~Box</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
@@ -60,6 +89,7 @@
               <li><a href="{% url 'profile' %}">Profile</a></li>
             {% endif %}
           </ul>
+          <!-- Navbar only visible in MOBILE sized screens. -->
           <ul class="side-nav blue darken-1" id="mobile-demo">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
@@ -74,18 +104,26 @@
           </ul>
         </div>
       </nav>
-      
     </header>
-
     {% endblock %}
 
     <!-- creates a full page overlay in order to darken the background image -->
     <div class="overlay-darken"></div>
 
+    <!-- VERY IMPORTANT! Block content used Django templating language to define a
+    reuseable empty code block that can be defined in other template pages in order
+    to define the custom code and content for an individual page on the website. -->
     {% block content %}
     {% endblock %}
 
+    <!-- Post load JS, is JavaScrit to be load once most of the pages resources have
+    been loaded already -->
     {% block postloadjs %}
+
+      <!-- In this particular script the developer calls a jQuery function as defined
+      in the MAterialize library. In this case, it makes the .side-nav class work, or
+      'pop out' from the left side of the mobile sized screen by calling the .sideNav
+      method on the class .button-collapse. -->
       <script>
         $( document ).ready(function(){
           $(".button-collapse").sideNav();
@@ -93,6 +131,9 @@
       </script>
     {% endblock %}
 
+    <!-- The footer element, position is relative so it stays always at the bottom of
+    the template page, and scrolls with the content, and doeant otherwise get in the way
+    of the view of the 'user', contains information to be displayed on every page. -->
     <footer class="blue lighten-5">
       <div class="center">
         <h4>Contact</h4>
@@ -101,4 +142,6 @@
       </div>
     </footer>
   </body>
+
+<!-- Document closing tag, end of the HTML file-->
 </html>
