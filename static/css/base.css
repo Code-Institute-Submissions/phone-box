@@ -172,7 +172,7 @@ a sleek glassy looking effect. ----*/
 
 /* ---- Reuseable css class to push an element right by 10% of the screen width. ----*/
 .translate-center-from-left {
-	transform: translateX(10%);
+	transform: translateX(13%);
 }
 
 /* ---- Resuseable css class to push an elemenet down the page by 35% of the

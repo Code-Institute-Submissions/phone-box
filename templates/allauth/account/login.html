@@ -1,3 +1,5 @@
+<!-- calls the code from account/base.html which in turns extends the code from
+base.html in the project level directories -->
 {% extends "account/base.html" %}
 
 {% load i18n %}
@@ -5,12 +7,13 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
+<!-- Defined inside block content in the base.html file for allauth, to be the main
+content section for writing the ccustom code for the login page. -->
 {% block inner_content %}
-
 
 {% get_providers as socialaccount_providers %}
 
-
+<!-- Orgnaizes this login form into its own section. -->
 <section class="section-padding-login">
     <div class="container">
         <div class="row">
@@ -57,6 +60,8 @@
         </div>
     </div>
 </section>
+<!-- Adds 5% gap between the section above the and footer element. gives the content
+a little bit more room to breathe. -->
 <div class="spacer"></div>
 
 {% endblock %}
