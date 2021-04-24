@@ -1,1 +1,1 @@
-web: gunicorn charitybox.wsgi
+web: gunicorn charitybox.wsgi:application
