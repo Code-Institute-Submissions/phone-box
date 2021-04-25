@@ -15,6 +15,9 @@ Aesthetic
 - The main background (source acknowleged in the acknowledgements section at the bottom of the readme) again was selected for a little bit of comedy sake, as it a grouping of peoples hands holding up older style phones, typically used by people who are either nostalgic or desire a cheaper, more simple phone. With a sky blue background, I thought overall the image fit the colour-pallete and added to the comedy factor. This image would cover the whole of the pages background and be set at a z-index of -1 so that it would sit behind all other page elements.
 - The footer, at the bottom of the page I decided to set its position at 'relative' so that it would scroll with the rest of a pages content. I chose an off-white blue with black text, to fit with the main aesthetic of the project, while not being so harsh on a users eyes, but also drew the users gaze once the footer was visible as it contains contact information. AGain the phone number contained in the footer element is the 'Reynholm Industries Emergency Services' telephone from the TV show 'IT Crowd' for the comedy factor.
 
+Colour Palette used<br>
+![Colour Pallette](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/images_for_readme/color-pallette.jpg)
+
 User Stories
 - As a user, Id like to sign up for an account.
 - As a user, I'd like to be able to login to my personal account with the username OR email and password I signed up with.
