@@ -91,6 +91,7 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Deployment
 
 This section give a detailed rundown on how to run the project locally and how it was deployed to the [Heroku](heroku.com) platform.
+The live site is avaible here: [Phone~Box](https://phone-box.herokuapp.com/)
 
 To run the code locally via development server:
 1) Ensure these variables are correct in settings.py
@@ -117,21 +118,56 @@ To Deploy to Heroku:
 3) Ensure you have requirements.txt
     - pip3 freeze > requirements.txt
 
-4) Use this commandd in the terminal window to create a 'staticfiles' directory
+4) Use this command in the terminal window to create a 'staticfiles' directory
     - python manage.py collectstatic
 
 5) In terminal, use these commands to save your project to a git repository
     - git init  """ creates a new offline git repo if you havn't already """
-    - git add .
-    - git commit -m "your descritive message here."
+    - git add .  """ adds ALL untracked or modified project files to local git repo """
+    - git commit -m "your descriptive message here."  """ saves your git repo """
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+6) Push/Upload git repo to Github
+    - Download and install [Github Desktop](https://desktop.github.com/)
+    - Ensure you are logged in by following in this in the top left corner of the app: File --> options --> Account --> Sign in
+    - Enter your log in details.
+    - Select your offline git repo by following: current repository --> filter (type project name) --> yourprojectname
+    - Click Push Origin in the top middle of the app screen.
+    - Github Desktop will then create your Git repo on Github.com
 
+7) Create and Setup Heroku app
+    - Create Heroku account.
+    - in Dashboard in the top right corner, follow: New --> Create new app
+    - Give you app a name.
+    - Select a server closest to you.
+    - Click create app.
+    - Once redirected, click 'Deploy' tab towards the top left of the screen.
+    - Next to the heading 'Deployment Method' select github to connect your account
+    - Once connected use filter to search for the repo you created earlier.
+    - Click connect
+    - Scroll down a little and click 'Enable Automatic Deploys'
 
+8) Ensure these environment variable are in settings, by clicking 'Reveal config Variables':
+    - PORT = 5000
+    - IP = 0.0.0.0
+    - DEBUG = ""
+    - DATABASE_URL = postgres://uvqwokrrhljpuz:abcd3b8f65747473a89a9ad8943aa9f880f391e8e440f515991cc6427688a441@ec2-54-72-155-238.eu-west-1.compute.amazonaws.com:5432/d8sgl09bcei9to
+    - SECRET_KEY = "Insert you secret key here to keep it out of version control"
+    
+9) Go Live!
+    - Go back to the 'Deploy' tab
+    - Scroll to the bottom of the page
+    - Next to 'Choose a branch to deploy' click 'Deploy Branch'
+    - Watch Heroku Build your live site.
+    - At the top of the screen click 'Open app' to load and view the live site.
+    - It should look something like: https://phone-box.herokuapp.com/
 
+- PLEASE NOTE:
+    - If your custom styles are not being rendered, this is because of Herokus MIME checker
+    - If this happens go back to your project and add attribute -- type="text/css" to your .css link in base.html
+    - re run this: python manage.py collectstatic
+    - Go back through the deployment steps to update your git repository
+    - Go back to 'Deploy' in your heroku apps Dashboard, scroll down and click 'Deploy branch'
+    - This should have resolved the errors.
 
 ## Credits
 
