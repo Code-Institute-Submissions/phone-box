@@ -8,7 +8,12 @@ Live Site can be located here https://phone-box.herokuapp.com/
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+In this section I detail the 'User Experience Design' process (or UXD), Included is some typical user stories, a section containing links to the wireframe diagrams and notes. And a rundown of the aesthetic.
+
+Aesthetic
+- The overall colour theme used for the project on navbar and button elements is a light blue colour taken from the materialize library for the backgrounds and white text. My thoughts on this was that not only does it give off a friendly appearance, but the light blue also conveyes a sense of peacefullness.
+- The main background (source acknowleged in the acknowledgements section at the bottom of the readme) again was selected for a little bit of comedy sake, as it a grouping of peoples hands holding up older style phones, typically used by people who are either nostalgic or desire a cheaper, more simple phone. With a sky blue background, I thought overall the image fit the colour-pallete and added to the comedy factor. This image would cover the whole of the pages background and be set at a z-index of -1 so that it would sit behind all other page elements.
+- The footer, at the bottom of the page I decided to set its position at 'relative' so that it would scroll with the rest of a pages content. I chose an off-white blue with black text, to fit with the main aesthetic of the project, while not being so harsh on a users eyes, but also drew the users gaze once the footer was visible as it contains contact information. AGain the phone number contained in the footer element is the 'Reynholm Industries Emergency Services' telephone from the TV show 'IT Crowd' for the comedy factor.
 
 User Stories
 - As a user, Id like to sign up for an account.
@@ -18,8 +23,6 @@ User Stories
 - As a user who donated, I may want to stay anonymous.
 - As a user, I may want my own profile to feel a part of a larger community.
 - As a user, I may want to see testimonials to view how past donations have helped those in need.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 Wireframes
 
@@ -187,11 +190,13 @@ To Deploy to Heroku:
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text in the About section of the landing page was written by my fiancee Suzy-Erin Collins
+- The Text in the 'Big Spender' card element on the donations page makes reference to the lyrics of the song 'Bohemian Rhapsody' by Queen.
 
 ### Media
 - The image used for the main banner of the site were obtained from [webdesignerdepot](https://www.webdesignerdepot.com/2012/11/6-free-mobile-device-emulators-for-testing-your-site/) by way of google search.
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- A Big thank you to my Mentor Reuben Ferrante for his help and advice, and generally being cheerful and supprtive all the while I was losing my head.
+- The Phone number in the footer element of the project is the 'Reynholm Industries Emergencies Services' number from the TV show 'IT Crowd'.
