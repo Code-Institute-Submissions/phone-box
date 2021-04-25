@@ -38,11 +38,35 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+In this section, I detail the Tools and technologies used to build the project.
 
+- [Visual Studio Code](https://code.visualstudio.com/)
+    - This is the IDE or 'Integrated Development Environment' used to build the project.
+- [HTML](https://www.w3schools.com/html/html_intro.asp#:~:text=HTML%20stands%20for%20Hyper%20Text,structure%20of%20a%20Web%20page)
+    - The Project uses 'Hypertext Markup Language' to create the basic skeleton for each web page.
+- [CSS](https://www.w3schools.com/css/default.asp)
+    - The project uses 'Cascading Style Sheets' to create the styles for each page and applies them via custom classes and Id's.
+- [Python3](https://www.python.org/download/releases/3.0/)
+    - The project uses Python as its backend language.
+- [Django](https://www.djangoproject.com/)
+    - The project uses Django as it's 'Full Stack Framework' in order to create and organise, templates, views, and apps.
+- [Django_Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+    - The project uses allauth in order to quickly integreate the abillity for a user to create and login to a user account on the site.
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-
+    - The project uses **JQuery** to allow certain function in CDNs and libraries to work properly.
+- [Bootstrap4](https://getbootstrap.com/)
+    - The project uses Bootstrap to help build the styles with classes and Id's.
+- [Materialize0.100.2](http://archives.materializecss.com/0.100.2/)
+    - The project uses Materialize to help build the styles with classes and Id's.
+- [Stripe](https://stripe.com/gb)
+    - The project uses Stripe API to create an integrated payment system, used by the user to make charitable donations by card.
+- [Heroku](https://signup.heroku.com/)
+    - The project uses Heroku to host the live site and all the required code and static files to serve the site.
+    - Find the live site here: [Phone~Box](https://phone-box.herokuapp.com/)
+- [Whitenoise](http://whitenoise.evans.io/en/stable/)
+    - The project uses whitenoise in order to allow better web serving for Python apps, in this case for serving staticfiles with storage.
+- [Git](https://git-scm.com/)
+    - The project uses Git to handle version control, and allows for pushing small or large project changes into a github repository.
 
 ## Testing
 
