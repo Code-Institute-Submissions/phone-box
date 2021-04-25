@@ -90,14 +90,47 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This section give a detailed rundown on how to run the project locally and how it was deployed to the [Heroku](heroku.com) platform.
+
+To run the code locally via development server:
+1) Ensure these variables are correct in settings.py
+    - DEBUG = True / DEBUG = 'DEVELOPMENT' in os.environ """depending on your IDE this may not work"""
+2) To run the project type into your IDE terminal window
+    - python manage.py runserver
+
+The IDE will then run the development server in the terminal window.
+- Click on the port to open the landing page in the your web browser.
+
+To Deploy to Heroku:
+1) ensure these variable are correct in settings.py
+    - DEBUG = False
+    - ALLOWED_HOSTS = ['*']
+    - WSGI_APPLPICATION = 'charitybox.wsgi.application'
+    - MIDDLEWARE = 'whitenoise.middleware.WhiteNoiseMiddleware',  """ paste this at the end of the MIDDLEWARE section """
+    - STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    - STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    - STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static',)
+
+2) Ensure you have Procfile
+    - pip3 freeze > Procfile
+
+3) Ensure you have requirements.txt
+    - pip3 freeze > requirements.txt
+
+4) Use this commandd in the terminal window to create a 'staticfiles' directory
+    - python manage.py collectstatic
+
+5) In terminal, use these commands to save your project to a git repository
+    - git init  """ creates a new offline git repo if you havn't already """
+    - git add .
+    - git commit -m "your descritive message here."
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
 - Different values for environment variables (Heroku Config Vars)?
 - Different configuration files?
 - Separate git branch?
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+
 
 
 ## Credits
