@@ -21,6 +21,20 @@ User Stories
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
+Wireframes
+
+The Folder containing wireframes can be found here: [Wireframes](https://github.com/phillpearsondev/phone-box/tree/master/wireframes)
+
+- [Wireframe 01](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134840.jpg) 'Landing Page Design'
+- [Wireframe 02](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134851__01.jpg) 'Testimonials Page Design'
+- [Wireframe 03](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134902.jpg) 'User Dashboard Design'
+- [Wireframe 04](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134913.jpg) 'Checkout Design'
+- [Wireframe 05](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134931__01.jpg) 'UserProfile Model Design'
+- [Wireframe 06](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_134950__01.jpg) 'Register View Design'
+- [Wireframe 07](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_135008.jpg) 'Text Content Ideas'
+- [Wireframe 08](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_135016.jpg) 'About Text Ideas'
+- [Wireframe 09](https://github.com/phillpearsondev/phone-box/blob/master/wireframes/thumbnail_IMG_20210419_135034.jpg) 'OnClick Text Sound Design'
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
