@@ -80,11 +80,15 @@ scripts, and any media used throughout the project. -->
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
+            {% if not request.user.is_authenticated %}
             <li><a href="{% url 'account_login' %}">Login</a></li>
+            {% endif %}
             {% if request.user.is_authenticated %}
               <li><a href="{% url 'account_logout' %}">Logout</a></li>
             {% endif %}
+            {% if not request.user.is_authenticated %}
             <li><a href="{% url 'account_signup' %}">Register</a></li>
+            {% endif %}
             {% if request.user.is_authenticated %}
               <li><a href="{% url 'profile' %}">Profile</a></li>
             {% endif %}
