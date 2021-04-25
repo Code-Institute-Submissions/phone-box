@@ -87,23 +87,45 @@ In this section, I detail the Tools and technologies used to build the project.
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+In this section I hope to provide a detailed rundown on how each aspect of the project has been tested during development, and before submission. Included would be an idea of how each link was tested, how user authentication or sign/log in and registration is tested. Aswell as what has been used to run automated tests. Below, I have included the user stories, and their associated tests, updated as that feature has been completed.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+During development I used this line in the IDE terminal in order to test via localhost server on port 5000:
+- python manage.py runserver
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+User Stories
+- ~~As a user, Id like to sign up for an account.~~
+    - On the landing page, you will seee links in the top right corner of the blue navbar.
+    - Click the 'Register' link to be taken to a sign up form.
+    - Enter your preffered email twice, your preffered username, and your preffered password twice.
+    - Click the 'Sign Up' button as the bottom of the form.
+    - You should then be redricted and asked to confirm your email address. (I did this by confirming the email sent in IDE terminal window)
+    - Once confirming your email address, you should be redirected to the user dashboard.
+    - You can access the user dashboard at any time after this by clicking the 'Profile' link in the top right of the navbar element.
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+- ~~As a user, I'd like to be able to login to my personal account with the username OR email and password I signed up with.~~
+    - On the 'landing page' (or any page, where you should see the navbar) in the navbar at the top right of screen, provided you are not currently logged in, click on the link that says 'login'.
+    - You will then be redirected to the login form. fill it in using your username and password you used when you created your account previously.
+    - Click the 'Sign in' button at the bottom of the form.
+    - You will then be redirected to the user dashboard where you should see your personal account information displayed.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+- ~~As a user looking to make a dontation, Id like to navigate to the Donations page in order to make a contributuon with as little confusion as possible.~~
+    - On the 'landing' page, or any page where you can either see 'Donations' in the navbar or a button that either says 'Donate' or 'Make a Donation' click any of these to be redirected to the Donations page.
+    - Select from one of three tiers of donations, cheapest to expensive from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
+    - You will then be redirected to the checkout page.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+- As a user who has donated, I may want to show that I have donated.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+- As a user who donated, I may want to stay anonymous.
+
+- ~~As a user, I may want my own profile to feel a part of a larger community.~~
+    - Follow the steps above in order to login to your account.
+    - Once logged in your will be automatically redirected to the User Dashboard.
+    - You can access this Profile at any time simply by going to navbar at the top of the page, and clicking the 'Profile' link.
+
+- As a user, I may want to see testimonials to view how past donations have helped those in need.
+
+Automated testing??
+Bugs??
 
 ## Deployment
 
