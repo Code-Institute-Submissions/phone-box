@@ -100,7 +100,8 @@ To run the code locally via development server:
     - python manage.py runserver
 
 The IDE will then run the development server in the terminal window.
-- Click on the port to open the landing page in the your web browser.
+
+3) Click on the port to open the landing page in the your web browser.
 
 To Deploy to Heroku:
 1) ensure these variable are correct in settings.py
