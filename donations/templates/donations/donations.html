@@ -20,75 +20,48 @@ the payment package boxes, defined below using .card -->
     <!-- Selectable payment cards organized into a scetion tag. -->
     <section>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        
+        {% for product in products %}
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-md glass-card white-text">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Cheap</h4>
+              <h4 class="my-0 fw-normal">{{ product.name }}</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title yellow-text">£5<small class="text-muted fw-light white-text">/OTP</small></h1>
+              <h1 class="card-title pricing-card-title yellow-text">£{{ product.price }}<small class="text-muted fw-light white-text">/OTP</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>10 Donator Points</li>
-                <li>Fancy helping out?</li>
-                <li>You just want to help?</li>
-                <li>Click the button?</li>
+                <li>{{ product.description1 }}</li>
+                <li>{{ product.description2 }}</li>
+                <li>{{ product.description3 }}</li>
               </ul>
 
               <!-- Button defined herer to re-direct to the checkout page. -->
-              <a id="checkout-button" href="{% url 'checkout' %}" 
-                class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
-                donate
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-md glass-card white-text">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Nice</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title yellow-text">£50<small class="text-muted fw-light white-text">/OTP</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>100 Donator Points</li>
-                <li>You arn't hard-up?</li>
-                <li>Got something to prove?</li>
-                <li>Click me!</li>
-              </ul>
-
-              <!-- Button defined herer to re-direct to the checkout page. -->
-              <a id="checkout-button" href="{% url 'checkout' %}" 
+              <a id="#buy_donation" href="{% url 'checkout' %}" 
                 class="waves-effect waves-light btn blue darken-1">
                 donate
               </a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-md border-primary glass-card white-text">
-            <div class="card-header py-3 text-white bg-primary border-primary blue darken-1">
-              <h4 class="my-0 fw-normal">Big Spender</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title yellow-text">£500<small class="text-muted fw-light white-text">/OTP</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>1000 Donator Points</li>
-                <li>Give to the poor boys</li>
-                <li>From the poor families</li>
-                <li>Easy Bragging rights</li>
-              </ul>
-
-              <!-- Button defined herer to re-direct to the checkout page. -->
-              <a id="checkout-button" href="{% url 'checkout' %}" 
-                class="waves-effect waves-light btn blue darken-1" id="click-to-play-sound">
-                donate
-              </a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </section>
   </div>
+
+<script>
+  var stripe = Stripe('{{ stripe_public_key }}');
+
+  const buy_donation = document.querySelector('#buy_donation')
+
+  buy_donation.addEventListener('click', event => {
+    stripe.redirectToCheckout({
+        sessionId: '{{ session_Id }}'
+      }).then(function (result) {
+
+      });
+  })
+  
+</script>
 
 <!-- End of 'content' block. -->
 {% endblock %}
