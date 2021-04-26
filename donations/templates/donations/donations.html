@@ -36,7 +36,7 @@ the payment package boxes, defined below using .card -->
               </ul>
 
               <!-- Button defined herer to re-direct to the checkout page. -->
-              <a id="#buy_donation" href="{% url 'checkout' %}" 
+              <a type="submit" href="{% url 'checkout' product.name %}" 
                 class="waves-effect waves-light btn blue darken-1">
                 donate
               </a>
@@ -48,20 +48,7 @@ the payment package boxes, defined below using .card -->
     </section>
   </div>
 
-<script>
-  var stripe = Stripe('{{ stripe_public_key }}');
-
-  const buy_donation = document.querySelector('#buy_donation')
-
-  buy_donation.addEventListener('click', event => {
-    stripe.redirectToCheckout({
-        sessionId: '{{ session_Id }}'
-      }).then(function (result) {
-
-      });
-  })
-  
-</script>
 
 <!-- End of 'content' block. -->
 {% endblock %}
+
