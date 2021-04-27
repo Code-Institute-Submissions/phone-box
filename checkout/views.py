@@ -14,8 +14,8 @@ from profiles.forms import UserProfileForm
 def checkout(request, item_id):
 
     donation = request.session.get('donation', {})
+    donation[item_id]
 
-    request.session['donation'] = donation[item_id]
     print(request.session['donation'])
     return render(request, 'checkout/checkout.html', donation)
 

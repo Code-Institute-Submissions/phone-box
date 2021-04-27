@@ -36,7 +36,7 @@ the payment package boxes, defined below using .card -->
               </ul>
 
               <!-- Button defined herer to re-direct to the checkout page. -->
-              <a type="submit" href="{% url 'checkout' product.name %}" 
+              <a type="submit" data-item_id="{{ product.name }}" value="{{ product.price }}" href="{% url 'checkout' product.name %}" 
                 class="waves-effect waves-light btn blue darken-1">
                 donate
               </a>
