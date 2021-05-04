@@ -4,20 +4,18 @@ from django.contrib import messages
 from django.conf import settings
 
 from checkout.models import Order
-import stripe
+import stripe, logging
 
 from donations.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
-
 def checkout(request, item_id):
+    context = {}
+    item_id = request.POST.get('item_id')
+    context['donation'] = item_id
 
-    donation = request.session.get('donation', {})
-    donation[item_id]
-
-    print(request.session['donation'])
-    return render(request, 'checkout/checkout.html', donation)
+    return render(request, "checkout/checkout.html", context)
 
 def pay_now(request):
 

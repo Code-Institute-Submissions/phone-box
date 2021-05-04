@@ -23,25 +23,27 @@ the payment package boxes, defined below using .card -->
         
         {% for product in products %}
         <div class="col">
-          <div class="card mb-4 rounded-3 shadow-md glass-card white-text">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">{{ product.name }}</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title yellow-text">£{{ product.price }}<small class="text-muted fw-light white-text">/OTP</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>{{ product.description1 }}</li>
-                <li>{{ product.description2 }}</li>
-                <li>{{ product.description3 }}</li>
-              </ul>
+          <form action="checkout/checkout.html" method="POST" id="donationCard">
+            <div class="card mb-4 rounded-3 shadow-md glass-card white-text">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">{{ product.name }}</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title yellow-text">£{{ product.price }}<small class="text-muted fw-light white-text">/OTP</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>{{ product.description1 }}</li>
+                  <li>{{ product.description2 }}</li>
+                  <li>{{ product.description3 }}</li>
+                </ul>
 
-              <!-- Button defined herer to re-direct to the checkout page. -->
-              <a type="submit" data-item_id="{{ product.name }}" value="{{ product.price }}" href="{% url 'checkout' product.name %}" 
-                class="waves-effect waves-light btn blue darken-1">
-                donate
-              </a>
+                <!-- Button defined herer to re-direct to the checkout page. -->
+                <a type="submit" name="donation" data-item_id="{{ product.id }}" href="{% url 'checkout' product.id %}" 
+                  class="waves-effect waves-light btn blue darken-1">
+                  donate
+                </a>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
         {% endfor %}
       </div>
