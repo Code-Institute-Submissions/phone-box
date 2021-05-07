@@ -11,9 +11,13 @@ from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
 def checkout(request, item_id):
-    context = {}
-    item_id = request.POST.get('item_id')
-    context['donation'] = item_id
+
+    itemIdInt = int(item_id)
+    product = Product.objects.get(id=itemIdInt)
+
+    context = {
+        "product": product
+    }
 
     return render(request, "checkout/checkout.html", context)
 
