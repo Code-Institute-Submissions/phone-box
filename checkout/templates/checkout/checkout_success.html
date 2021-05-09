@@ -1,2 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row white-text">
+        <div class="col s12 offset-s2">
+            <div class="card center glass-card card-padding">
+                <h2>Congratulations!</h2>
+                <h4>Your Donation of <span class="yellow-text">£{{ amount }}</span> was successful..</h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

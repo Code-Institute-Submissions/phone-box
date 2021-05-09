@@ -4,11 +4,13 @@ from django.contrib import messages
 from django.conf import settings
 
 from checkout.models import Order
-import stripe, logging
+import stripe
 
 from donations.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+
+stripe.api_key = "sk_test_51IcwMYIXOx9uZSSgQxT1iIVgoz5v1nbszaklyXojNDW3hKNt6a7RvDm22wVKEEunUiWbq5oi1CKzRi39M8LRsYKg00RVuThhvT"
 
 def checkout(request, item_id):
 
@@ -21,17 +23,29 @@ def checkout(request, item_id):
 
     return render(request, "checkout/checkout.html", context)
 
-def pay_now(request):
+def charge(request):
 
-    donation = request.session.get('donation', {})
+	if request.method == 'POST':
+		print('Data:', request.POST)
 
-    order_form = OrderForm()
-    template = 'checkout/checkout.html'
+		amount = int(request.POST['amount'])
 
-    context = {
-        'order_form': order_form,
-        'stripe_public_key': 'pk_test_51IcwMYIXOx9uZSSgsHfRJknAxd9ghJVcy7xI83IdyiUfj7EZ7cjsdBwJBUvMNGKRZSb1bwN288Z7p83aLTb0Opoo00hIm3whET',
-        'client_secret': 'test client secret',
-    }
+		customer = stripe.Customer.create(
+			email=request.POST['email'],
+			name=request.POST['nickname'],
+			source=request.POST['stripeToken']
+			)
 
-    return render(request, template, context)
+		charge = stripe.Charge.create(
+			customer=customer,
+			amount=amount*100,
+			currency='gbp',
+			description="Donation"
+            )
+
+	return redirect(reverse('success', args=[amount]))
+
+
+def success_message(request, args):
+	amount = args
+	return render(request, 'checkout/checkout_success.html', {'amount':amount})

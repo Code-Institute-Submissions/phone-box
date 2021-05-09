@@ -16,48 +16,132 @@
         <div class="row white-text">
             <div class="col s12 offset-s2">
                 <div class="card center glass-card card-padding">
-                <h4>Billing Information</h4>
+                <h4>Order Summary</h4>
                 <hr>
-                    <form class="center" action="#">
-                        <h6>Address on card</h6>
-                        <input type="text" placeholder="first_name">
-                        <input type="text" placeholder="last_name">
-                        <input type="text" placeholder="street_address1">
-                        <input type="text" placeholder="street_address2">
-                        <input type="text" placeholder="county">
-                        <input type="text" placeholder="postcode">
-                <hr>
-                    <h6>Card Details</h6>
-                    <hr>
-                    <input type="text" placeholder="card_number">
-                    <input type="text" placeholder="sort_code">
-                    <input type="text" placeholder="security_code">
-                    <br>
-                    <hr>
-                    <div class="order-summary-field">
-                        <h6>Order Summary</h6>
-                        <hr>
-                        <p>Order: {{ product.name }}</p>
-                        <p>Total: {{ product.price }}</p>
-                    </div>
-    
-                    <div class="row">
-                        <div class="col s12 center">
-                            <div class="pay-now-section">
-                                <br>
-                                <a href="#" action=""
-                                    class="waves-effect waves-light btn blue darken-1">
-                                    pay now
-                                </a>
+                    <form class="center" action="{% url 'charge' %}" method="post" id="payment-form">
+                        {% csrf_token %}
+                        <div class="order-summary-field">
+                            <div class="card-body">
+                            <div class="col s10 offset-s2">
+                                <div class="card mb-4 rounded-3 shadow-md glass-card white-text">
+                                    <div class="py-3">
+                                        <h4 class="my-0 fw-normal">{{ product.name }}</h4>
+                                    </div>
+                                    <input class="d-none" name="amount" id="amount" value="{{ product.price }}">
+                                    <option class="card-title pricing-card-title yellow-text" name="amount" id="amount" value="{{ product.price }}">Total: £{{ product.price }}</option>
+                                </div>
+                            </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-field-6">
+                            <input class="center center-align" required type="text" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-field-6">
+                            <input class="center center-align" required type="text" name="nickname" placeholder="Nickname">
+                        </div>
+                        <hr>
+                        <h6>Card Details</h6>
+                        <hr>
+                        <br>
+                        <div class="form-row">
+                            <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                            </div>
+    
+                            <!-- Used to display form errors. -->
+                            <div class="col s12 center">
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col s12 center">
+                                <div class="pay-now-section">
+                                    <br>
+                                    <button class="waves-effect waves-light btn blue darken-1">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+// Create a Stripe client.
+		var stripe = Stripe('pk_test_51IcwMYIXOx9uZSSgsHfRJknAxd9ghJVcy7xI83IdyiUfj7EZ7cjsdBwJBUvMNGKRZSb1bwN288Z7p83aLTb0Opoo00hIm3whET');
+
+		// Create an instance of Elements.
+		var elements = stripe.elements();
+
+		// Custom styling can be passed to options when creating an Element.
+		// (Note that this demo uses a wider set of styles than the guide below.)
+		var style = {
+		  base: {
+		    color: '#32325d',
+		    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+		    fontSmoothing: 'antialiased',
+		    fontSize: '16px',
+		    '::placeholder': {
+		      color: '#aab7c4'
+		    }
+		  },
+		  invalid: {
+		    color: '#fa755a',
+		    iconColor: '#fa755a'
+		  }
+		};
+
+		// Create an instance of the card Element.
+		var card = elements.create('card', {style: style});
+
+		// Add an instance of the card Element into the `card-element` <div>.
+		card.mount('#card-element');
+
+		// Handle real-time validation errors from the card Element.
+		card.addEventListener('change', function(event) {
+		  var displayError = document.getElementById('card-errors');
+		  if (event.error) {
+		    displayError.textContent = event.error.message;
+		  } else {
+		    displayError.textContent = '';
+		  }
+		});
+
+		// Handle form submission.
+		var form = document.getElementById('payment-form');
+		form.addEventListener('submit', function(event) {
+		  event.preventDefault();
+
+		  stripe.createToken(card).then(function(result) {
+		    if (result.error) {
+		      // Inform the user if there was an error.
+		      var errorElement = document.getElementById('card-errors');
+		      errorElement.textContent = result.error.message;
+		    } else {
+		      // Send the token to your server.
+		      stripeTokenHandler(result.token);
+		    }
+		  });
+		});
+
+		// Submit the form with the token ID.
+		function stripeTokenHandler(token) {
+		  // Insert the token ID into the form so it gets submitted to the server
+		  var form = document.getElementById('payment-form');
+		  var hiddenInput = document.createElement('input');
+		  hiddenInput.setAttribute('type', 'hidden');
+		  hiddenInput.setAttribute('name', 'stripeToken');
+		  hiddenInput.setAttribute('value', token.id);
+		  form.appendChild(hiddenInput);
+
+		  // Submit the form
+		  form.submit();
+		}
+</script>
 
 {% endblock %}
 
