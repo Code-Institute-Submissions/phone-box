@@ -119,6 +119,18 @@ User Stories
 - As a user who has donated, I may want to show that I have donated.
 
 - ~~As a user who donated, I may want to stay anonymous.~~
+    - Navigate to the donations page by either clicking on the 'Donations' link in the navbar or, the 'make a donation' button on the landing page.
+    - Once redirected, choose between one of the three tiers of donation, and click the corresponding button to redirect to the checkout page.
+    - Once redirected, enter your information and test card details as follows:
+    
+    Card Number: 4242-4242-4242-4242
+    
+    Expiry Date: Any future date MM/YY
+    
+    CVC: Any three numbers ???
+    
+    - Then click on the donate now button on the bottom of the checkout form to make the payment.
+    - You will then be redirected to the success message page which will display the value of your donation within the text.
 
 - ~~As a user, I may want my own profile to feel a part of a larger community.~~
     - Follow the steps above in order to login to your account.
