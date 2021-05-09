@@ -87,6 +87,8 @@ In this section, I detail the Tools and technologies used to build the project.
     - The project uses whitenoise in order to allow better web serving for Python apps, in this case for serving staticfiles with storage.
 - [Git](https://git-scm.com/)
     - The project uses Git to handle version control, and allows for pushing small or large project changes into a github repository.
+- [SqlBrowser](https://sqlitebrowser.org/)
+    - This tool is used to check the SQL tables in the SQLite3 database file directly.
 
 ## Testing
 
