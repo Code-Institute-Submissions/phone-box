@@ -113,19 +113,18 @@ User Stories
 
 - ~~As a user looking to make a dontation, Id like to navigate to the Donations page in order to make a contributuon with as little confusion as possible.~~
     - On the 'landing' page, or any page where you can either see 'Donations' in the navbar or a button that either says 'Donate' or 'Make a Donation' click any of these to be redirected to the Donations page.
-    - Select from one of three tiers of donations, cheapest to expensive from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
+    - Select from one of three tiers of donations, cheapest to highest cost from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
     - You will then be redirected to the checkout page.
 
 - As a user who has donated, I may want to show that I have donated.
 
-- As a user who donated, I may want to stay anonymous.
+- ~~As a user who donated, I may want to stay anonymous.~~
 
 - ~~As a user, I may want my own profile to feel a part of a larger community.~~
     - Follow the steps above in order to login to your account.
     - Once logged in your will be automatically redirected to the User Dashboard.
     - You can access this Profile at any time simply by going to navbar at the top of the page, and clicking the 'Profile' link.
 
-- As a user, I may want to see testimonials to view how past donations have helped those in need.
 
 Automated testing??
 Bugs??
@@ -225,3 +224,4 @@ To Deploy to Heroku:
 
 - A Big thank you to my Mentor Reuben Ferrante for his help and advice, and generally being cheerful and supprtive all the while I was losing my head.
 - The Phone number in the footer element of the project is the 'Reynholm Industries Emergencies Services' number from the TV show 'IT Crowd'.
+- The stripe payments system was inpired by the Youtuber [Dennis Ivy](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg)
