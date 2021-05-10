@@ -87,6 +87,8 @@ In this section, I detail the Tools and technologies used to build the project.
     - The project uses whitenoise in order to allow better web serving for Python apps, in this case for serving staticfiles with storage.
 - [Git](https://git-scm.com/)
     - The project uses Git to handle version control, and allows for pushing small or large project changes into a github repository.
+- [SqlBrowser](https://sqlitebrowser.org/)
+    - This tool is used to check the SQL tables in the SQLite3 database file directly.
 
 ## Testing
 
@@ -113,19 +115,30 @@ User Stories
 
 - ~~As a user looking to make a dontation, Id like to navigate to the Donations page in order to make a contributuon with as little confusion as possible.~~
     - On the 'landing' page, or any page where you can either see 'Donations' in the navbar or a button that either says 'Donate' or 'Make a Donation' click any of these to be redirected to the Donations page.
-    - Select from one of three tiers of donations, cheapest to expensive from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
+    - Select from one of three tiers of donations, cheapest to highest cost from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
     - You will then be redirected to the checkout page.
 
 - As a user who has donated, I may want to show that I have donated.
 
-- As a user who donated, I may want to stay anonymous.
+- ~~As a user who donated, I may want to stay anonymous.~~
+    - Navigate to the donations page by either clicking on the 'Donations' link in the navbar or, the 'make a donation' button on the landing page.
+    - Once redirected, choose between one of the three tiers of donation, and click the corresponding button to redirect to the checkout page.
+    - Once redirected, enter your information and test card details as follows:
+    
+    Card Number: 4242-4242-4242-4242
+    
+    Expiry Date: Any future date MM/YY
+    
+    CVC: Any three numbers ???
+    
+    - Then click on the donate now button on the bottom of the checkout form to make the payment.
+    - You will then be redirected to the success message page which will display the value of your donation within the text.
 
 - ~~As a user, I may want my own profile to feel a part of a larger community.~~
     - Follow the steps above in order to login to your account.
     - Once logged in your will be automatically redirected to the User Dashboard.
     - You can access this Profile at any time simply by going to navbar at the top of the page, and clicking the 'Profile' link.
 
-- As a user, I may want to see testimonials to view how past donations have helped those in need.
 
 Automated testing??
 Bugs??
@@ -225,3 +238,4 @@ To Deploy to Heroku:
 
 - A Big thank you to my Mentor Reuben Ferrante for his help and advice, and generally being cheerful and supprtive all the while I was losing my head.
 - The Phone number in the footer element of the project is the 'Reynholm Industries Emergencies Services' number from the TV show 'IT Crowd'.
+- The stripe payments system was inpired by the Youtuber [Dennis Ivy](https://www.youtube.com/channel/UCTZRcDjjkVajGL6wd76UnGg)
