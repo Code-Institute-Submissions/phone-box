@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container white-text">
+    <div class="row">
+        <div class="col center">
+
+            <h1>Donation History</h1>
+            {% for donation in user_donations %}
+                <section>
+                    <div class="row">
+                        <div class="col offset-s2">
+                            <div class="card glass-card center">
+                                <h5 class="fw-normal">{{ donation.package }}</h5>
+                                    <hr>
+                                <ul>
+                                    <li><h6>{{ donation.date }}</h6></li>
+                                    <li><h5 class="pricing-card-title yellow-text">£{{ donation.price }}</h5></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+            <a href="{% url 'profile' %}"
+                class="waves-effect waves-light btn blue darken-1">
+                return to profile
+            </a>
+            <a href="{% url 'donations' %}" 
+                class="waves-effect waves-light btn blue darken-1">
+                make a donation
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

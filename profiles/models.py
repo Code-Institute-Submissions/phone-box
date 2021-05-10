@@ -1,7 +1,10 @@
 from django.db import models
+from django.db.models import Sum
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
 
 """ A user profile model for maintaining default delivery information and order history """
 class UserProfile(models.Model):
@@ -19,14 +22,30 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-""" sets a reciever to be required, when user information is recieved, create an
-instance and save the profile/user information. """
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    Create or update the user profile
+    Sets a reciever to be required, when user information is recieved, create an
+    instance and save the profile/user information. 
+    Create or update the user profile.
     """
     if created:
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class donationHistory(models.Model):
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='donationHistory')
+    package = models.CharField(max_length=200, null=True, blank=True)
+    price = models.DecimalField(decimal_places=0, max_digits=3, null=True, blank=True)
+    username = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
