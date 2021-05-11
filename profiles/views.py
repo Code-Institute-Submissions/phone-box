@@ -21,7 +21,8 @@ def profile(request):
 def donationHistoryView(request):
     """ A view to render out personalised donation history for the
     user currently logged in """
-    user_donations = donationHistory.objects.all()
+    user_profile_id = request.user.id
+    user_donations = donationHistory.objects.all().filter(user_profile_id=user_profile_id)
 
     context = {
         'user_donations': user_donations,

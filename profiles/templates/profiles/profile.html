@@ -9,21 +9,20 @@ allows custom code to be written on a page by page basis. -->
 
         <div class="row">
             <div class="col s12 center">
-                <h2>Dashboard</h2>
+                <h1 class="display-4 fw-normal white-text p-3 pb-md-4 mx-auto text-center">Dashboard</h1>
             </div>
         </div>
 
         <div class="col s10 offset-s2">
             <div class="card glass-card center">
-                <h4>Account Details</h4>
+                <h4 class="py-3">Account Details</h4>
                 <hr>
-                <div>
+                <div class="float-left">
                     <p><strong>Username: </strong>{{ user.username }}</p>
                     <p><strong>Email: </strong>{{ user.email }}</p>
                 </div>
                 <hr>
-                <h4>Donation History</h4>
-                <hr>
+                <h4 class="py-3">Donation History</h4>
                 <div class="row">
                     <div class="col s12">
                         <a href="{% url 'donationHistoryView' %}"

@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col center">
 
-            <h1>Donation History</h1>
+            <h1 class="display-4 fw-normal white-text p-3 pb-md-4 mx-auto text-center">Donation History</h1>
+            <section class="margin-bottom-extension">
             {% for donation in user_donations %}
-                <section>
                     <div class="row">
                         <div class="col offset-s2">
                             <div class="card glass-card center">
@@ -22,7 +22,6 @@
                             </div>
                         </div>
                     </div>
-                </section>
             {% endfor %}
             <a href="{% url 'profile' %}"
                 class="waves-effect waves-light btn blue darken-1">
@@ -32,6 +31,7 @@
                 class="waves-effect waves-light btn blue darken-1">
                 make a donation
             </a>
+            </section>
         </div>
     </div>
 </div>

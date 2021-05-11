@@ -65,6 +65,22 @@ def charge(request):
 
 			return redirect(reverse('success', args=[amount]))
 
+		else:
+
+			myDate = datetime.now()
+			formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
+			username = "anonymous"
+			email=request.POST['email']
+			package = Product.objects.get(price=amount)
+			price = request.POST['amount']
+			date = formatedDate
+
+			user_donations = donationHistory(username=username, email=email,
+				package=package, price=price, date=date)
+			user_donations.save()
+
+			return redirect(reverse('success', args=[amount]))
+
 		return redirect(reverse('success', args=[amount]))
 
 
