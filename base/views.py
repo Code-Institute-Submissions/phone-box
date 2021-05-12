@@ -4,7 +4,7 @@ from profiles.models import donationHistory
 
 
 def index(request):
-    """ A view to return the index page, and render out the sum total of all
-    donations made"""
+    """ A view to return the index template/landing page (the first view the user will see
+    when they visit the site """
 
     return render(request, 'home/index.html')

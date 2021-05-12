@@ -6,7 +6,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
-""" A user profile model for maintaining default delivery information and order history """
+""" A user profile model for defining user information to be recorded in the SQLite3
+database """
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_first_name = models.CharField(max_length=200, null=True, blank=True)
@@ -34,7 +35,8 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     # Existing users: just save the profile
     instance.userprofile.save()
 
-
+""" A class defining tables in the database to be used to record a donation entry, each
+time a stripe payment is made through the stripe API """
 class donationHistory(models.Model):
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='donationHistory')

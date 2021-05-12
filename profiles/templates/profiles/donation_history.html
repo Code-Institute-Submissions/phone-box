@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
+<!-- loads static files, such as 'base.css' -->
 {% load static %}
 
 {% block content %}
 
+<!-- Bootstrap container, row and column classes used to quickly create a presentable
+styling markup. -->
 <div class="container white-text">
     <div class="row">
         <div class="col center">
 
             <h1 class="display-4 fw-normal white-text p-3 pb-md-4 mx-auto text-center">Donation History</h1>
             <section class="margin-bottom-extension">
+            <!-- A for loop created using the jinja templating language to create an element
+                 matching the html contained within the for loop, for each entry in the donationHistory
+                 database class tables. -->
             {% for donation in user_donations %}
                     <div class="row">
                         <div class="col offset-s2">
@@ -23,6 +29,9 @@
                         </div>
                     </div>
             {% endfor %}
+            <!-- URL anchor tags supplied to allow the user easy access back to their
+                 profile dashboard, or to the donations page should they be inspired to make
+                 a new donation through the stripe API -->
             <a href="{% url 'profile' %}"
                 class="waves-effect waves-light btn blue darken-1">
                 return to profile

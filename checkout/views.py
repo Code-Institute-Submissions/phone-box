@@ -15,7 +15,7 @@ stripe.api_key = "sk_test_51IcwMYIXOx9uZSSgQxT1iIVgoz5v1nbszaklyXojNDW3hKNt6a7Rv
 
 def checkout(request, item_id):
 	""" A View to return the checkout page, and call product data from
-	the SQLite3 database based on the data-_item-id passed via the urls from
+	the SQLite3 database based on the data-item-id passed via the urls from
 	the donations page based on the user selection """
 
 	itemIdInt = int(item_id)
@@ -29,7 +29,8 @@ def checkout(request, item_id):
 
 def charge(request):
 	""" This view sends a post request with the card token to the stripe API
-	and makes a payment, then redirects to a payment success message """
+	and makes a payment, then redirects to a payment success message. As the payment
+	to stripe is made, a new entry in the donationHistory tables is made in the database"""
 	if request.method == 'POST':
 		print('Data:', request.POST)
 
@@ -48,6 +49,8 @@ def charge(request):
 			description="Donation"
             )
 
+		""" Checks if the user is authenicated/logged into an account, then grabs there
+		user information to record a new entry into the donationHistory tables """
 		if request.user.is_authenticated:
 
 			myDate = datetime.now()
@@ -66,7 +69,8 @@ def charge(request):
 			return redirect(reverse('success', args=[amount]))
 
 		else:
-
+			""" If the user is not authenticated however, a new entry of a donation is
+			made into the donationHistory database under the 'username' of 'anonymous' """
 			myDate = datetime.now()
 			formatedDate = myDate.strftime("%Y-%m-%d %H:%M:%S")
 			username = "anonymous"
@@ -85,7 +89,8 @@ def charge(request):
 
 
 def success_message(request, args):
-	""" A view to return a payment success message """
+	""" A view to return a payment success message once a successful payment is made using
+	stripe, and the amount that is donated, will be displayed on screen to the user. """
 	amount = args
 
 	return render(request, 'checkout/checkout_success.html', {'amount':amount})

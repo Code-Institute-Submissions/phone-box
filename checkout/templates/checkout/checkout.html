@@ -3,10 +3,13 @@
 
 {% block content %}
 
-
+<!-- In this template, we define the elements that wil be used to display what the user
+	is "purchasing", how much it will cost, and a simple bacnking card element which allow
+	the user to enter their card details -->
 
 <section class="section-padding-bottom">
-
+	<!-- Simple 'checkout header' with some instruction to the user lettting the know
+		 what they should be doing with this page when displayed. -->
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
         <h1 class="display-4 fw-normal white-text">Checkout</h1>
         <p class="fs-5 white-text">Please enter your billing information and card details below, to complete a donation.</p>
@@ -18,6 +21,9 @@
                 <div class="card center glass-card card-padding">
                 <h4>Order Summary</h4>
                 <hr>
+					<!-- All the elements for the order summary and stripe card elements are wrapped
+						 inside a form html element, which is how we are able to send this information
+						 to stripe, namely through the payment-form id -->
                     <form class="center" action="{% url 'charge' %}" method="post" id="payment-form">
                         {% csrf_token %}
                         <div class="order-summary-field">
@@ -33,6 +39,8 @@
                             </div>
                             </div>
                         </div>
+						<!-- These elements below allow a user to customise their nickname or email to
+							 be recorded into the database. -->
                         <div class="form-field-6">
                             <input class="center center-align" required type="text" name="email" placeholder="Email">
                         </div>
@@ -40,6 +48,10 @@
                             <input class="center center-align" required type="text" name="nickname" placeholder="Nickname">
                         </div>
                         <hr>
+						<!-- Some simple elements put together as per the integration instructions
+							 from the stripe API in order to generate the card input element for a user to
+							 enter their visa card details. much of the heavy lifting with generating this
+							 element is done using JavaScript -->
                         <h6>Card Details</h6>
                         <hr>
                         <br>
@@ -70,6 +82,7 @@
     </div>
 </section>
 
+<!-- Script tag used to write in the JavaScript from the Stripe API -->
 <script>
 // Create a Stripe client.
 		var stripe = Stripe('pk_test_51IcwMYIXOx9uZSSgsHfRJknAxd9ghJVcy7xI83IdyiUfj7EZ7cjsdBwJBUvMNGKRZSb1bwN288Z7p83aLTb0Opoo00hIm3whET');

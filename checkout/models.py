@@ -5,8 +5,7 @@ from django.db.models import Sum
 from django.conf import settings
 from profiles.models import UserProfile, User
 
-# Create your models here.
-
+# Defines a new class to create tables for a mailing list that can be called later
 class SubscriptionMailingList(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     email = models.CharField(max_length=255, null=True, blank=True)
