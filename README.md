@@ -118,7 +118,12 @@ User Stories
     - Select from one of three tiers of donations, cheapest to highest cost from left to right, by clicking the 'Donate' button embedded in their corresponding card element.
     - You will then be redirected to the checkout page.
 
-- As a user who has donated, I may want to show that I have donated.
+- ~~As a user who has donated, I may want to show that I have donated.~~
+    - Requires user account to be logged in.
+    - In the navbar, click the 'profile link' then the user will be redirected to the user dashboard.
+    - Within thsi screen scroll down until you wil a header with the text 'Donation Hisory'
+    - Click the button below 'Donation History' which says 'click to view'
+    - The user will then be directed to the donation history screen, diaplying a list of all the donations they have made under this particular user account.
 
 - ~~As a user who donated, I may want to stay anonymous.~~
     - Navigate to the donations page by either clicking on the 'Donations' link in the navbar or, the 'make a donation' button on the landing page.
@@ -139,9 +144,7 @@ User Stories
     - Once logged in your will be automatically redirected to the User Dashboard.
     - You can access this Profile at any time simply by going to navbar at the top of the page, and clicking the 'Profile' link.
 
-
-Automated testing??
-Bugs??
+In addition to manual forms of testing the project, I've emplyed the user of 'Breakpoints' within the VisualStudio Code IDE. WHich involves setting a 'watch' on a particular line you wish to stop the code from being run afterwards, and then displaying the value of a particular coding expression when that particular line is read.
 
 ## Deployment
 
