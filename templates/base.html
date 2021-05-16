@@ -95,6 +95,9 @@ scripts, and any media used throughout the project. -->
           </ul>
           <!-- Navbar only visible in MOBILE sized screens. -->
           <ul class="side-nav blue darken-1" id="mobile-demo">
+            <div class="span-width make-relative">
+              <a href="{% url 'home' %}" class="brand-logo">Phone~Box</a>
+            </div>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'donations' %}">Donations</a></li>
             <li><a href="{% url 'account_login' %}">Login</a></li>

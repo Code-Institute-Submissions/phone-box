@@ -31,9 +31,39 @@ allows custom code to be written on a page by page basis. -->
                         </a>
                     </div>
                 </div>
+                <hr>
+                <h4 class="py-3">Subscribe to Newsletter</h4>
+                <div class="row">
+                    <div class="col s12">
+                        {% if user.id in SubscriptionMailingList %}
+                            <form action="{% url 'subscribeToNewsletter' %}" method="POST" id="subscribe-to-mailing-list">
+                                {% csrf_token %}
+                                <input checked type="checkbox" id="subscribe-to-list" name="subscribe-to-list" value="subscribe-to-list">
+                                <label for="subscribe-to-list">Tick the box to Subscribe</label>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'subscribeToNewsletter' %}" method="POST" id="subscribe-to-mailing-list">
+                                {% csrf_token %}
+                                <input type="checkbox" id="subscribe-to-list" name="subscribe-to-list" value="subscribe-to-list">
+                                <label for="subscribe-to-list">Tick the box to Subscribe</label>
+                            </form> 
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $("#subscribe-to-list").change(function () {
+        $.ajax({
+            data: true,
+            url: "{% url 'subscribeToNewsletter' %}"
+        })
+        console.log("box ticked");
+      });
+</script>
+
 
 {% endblock %}

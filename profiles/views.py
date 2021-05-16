@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from profiles.models import UserProfile, donationHistory
+from profiles.models import UserProfile, donationHistory, SubscriptionMailingList
 from .forms import UserProfileForm
 
 
@@ -29,3 +29,22 @@ def donationHistoryView(request):
     }
 
     return render(request, 'profiles/donation_history.html', context)
+
+def subscribeToNewsletter(request):
+    """ A view to handle Mailing list subscriptions """
+
+    if request.is_ajax():
+        data =  request.GET['data']
+
+        if data == True:
+            user_id = request.user.id
+            email = request.user.email
+
+            subscribe = SubscriptionMailingList(user_id=user_id, email=email)
+            subscribe.save()
+
+        elif data == False:
+            user_id = request.user.id
+            email = request.user.email
+
+            subscribe = SubscriptionMailingList.objects.filter(user_id=user_id).delete()

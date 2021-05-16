@@ -16,6 +16,10 @@ used from googlefonts. ----*/
     color: white;
 }
 
+.span-width {
+    width: 100%
+}
+
 /*---- All anchor tag text in the nav element change yelloe when hovered over by the
 user. ----*/
 nav li>a:hover {
@@ -290,4 +294,13 @@ room for the inner content. -----*/
 
 .StripeElement--webkit-autofill {
 	background-color: #fefde5 !important;
+}
+
+/* ------------- Media Queries -------------------- */
+@media screen and (max-width: 410px) {
+	#media-fix-donations {
+		margin: 15%;
+		padding: 0;
+		width: 90%;
+	}
 }
